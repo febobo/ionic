@@ -34,12 +34,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // setup an abstract state for the tabs directive
     .state('tab', {
-    url: '/',
-  //  abstract: true,
-    templateUrl: baseUrl + '/home/home.html',
-    controller : 'homeController'
-  })
-  .state('tab.chats', {
+      url: '/',
+      //  abstract: true,
+      templateUrl: baseUrl + '/home/home.html',
+      controller: 'homeController'
+    })
+    .state('tab.chats', {
       url: '/chats',
       views: {
         'tab-chats': {
@@ -47,6 +47,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'ChatsCtrl'
         }
       }
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: baseUrl + '/user/login.html',
+      controller: 'loginController'
     })
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
@@ -57,16 +62,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: baseUrl + '/tab-account.html',
-        controller: 'AccountCtrl'
+    .state('tab.account', {
+      url: '/account',
+      views: {
+        'tab-account': {
+          templateUrl: baseUrl + '/tab-account.html',
+          controller: 'AccountCtrl'
+        }
       }
-    }
-  });
+    });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');

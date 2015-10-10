@@ -1,7 +1,15 @@
 var express = require('express'),
     app = express();
 
+var mongoose = require('mongoose');
 var list = require('./router/app');
+mongoose.connect('mongodb://localhost/ionic');
+var Cat = mongoose.model('Cat' , {'name' : String});
+var cat = new Cat({name : 'zhangbo'});
+cat.save(function(err){
+  if(err) console.log(err);
+  console.log('success')
+})
 app.use(express.static('www'));
 
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
