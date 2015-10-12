@@ -18,8 +18,9 @@ exports.signup = function(req, res) {
     }
 
     var user = new User(_user);
+    console.log(user)
     user.save(function(err, user) {
-      console.log(user)
+      console.log(err,user,1)
       if (err) {
         console.log(err);
       }
