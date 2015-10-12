@@ -1,0 +1,18 @@
+<div class="list">
+  <form name="signupFrom" id="signupFrom">
+  <label class="item item-input">
+    <input type="text" placeholder="用户名(最多20个字符)" mg-model="user.name" ng-maxLength="20" required="">
+  </label>
+  <label class="item item-input">
+    <input type="password" placeholder="密码(最少6个字符)" ng-model="user.password" required="" ng-minLength="6">
+  </label>
+  <label class="item item-input">
+    <input type="password" placeholder="重复密码" ng-model="user.repeatPassword" required="">
+  </label>
+  </form>
+</div>
+<div class="p-lr-10">
+  <button class="button button-balanced w-100 button-outline" ng-click="confirm(signupFrom)">
+    注册
+  </button>
+</div>

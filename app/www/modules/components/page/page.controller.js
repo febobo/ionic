@@ -1,6 +1,5 @@
-angular.module('starter.controllers')
-  .controller('loginController', function($scope, $ionicModal, modal , $http , $resource , $window , List , loading) {
-    console.log(loading)
+angular.module('starter.controllers' , ['ngResource'])
+  .controller('pageController', function($scope, $ionicModal, $http , $resource , List) {
     $ionicModal.fromTemplateUrl('my-modal.html', {
       scope: $scope,
       animation: 'slide-in-up'
@@ -16,10 +15,6 @@ angular.module('starter.controllers')
     $scope.getList = function() {
       $scope.list = List.query();
     }
-    $scope.confirm = function(){
-      modal.alert();
-    }
-
 
 
   })

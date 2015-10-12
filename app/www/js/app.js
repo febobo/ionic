@@ -30,14 +30,34 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   var baseUrl = 'modules';
+  var comUrl = 'modules/components';
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+    .state('page', {
       url: '/',
       //  abstract: true,
-      templateUrl: baseUrl + '/home/home.html',
-      controller: 'homeController'
+      data: {
+        title: '首页',
+      },
+      views: {
+        '': {
+          templateUrl: comUrl + '/page/page.html',
+          controller: 'pageController',
+        },
+        '@page': {
+          templateUrl: baseUrl + '/home/home.html',
+          controller: 'pageController'
+        }
+      }
+    })
+    .state('page.register',{
+      data: {
+        title: '快速注册',
+      },
+      url: 'register',
+      templateUrl: baseUrl + '/user/register.html',
+      controller: 'registerController'
     })
     .state('tab.chats', {
       url: '/chats',
@@ -48,8 +68,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-    .state('login', {
-      url: '/login',
+    .state('page.login', {
+      url: 'login',
+      data : {
+        title : '登陆'
+      },
       templateUrl: baseUrl + '/user/login.html',
       controller: 'loginController'
     })
