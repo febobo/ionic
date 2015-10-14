@@ -1,12 +1,14 @@
 <div class="list">
+  <form name="loginForm" id="loginForm">
   <label class="item item-input">
     <span class="input-label">用户名:</span>
-    <input type="text" ng-modal="user.name">
+    <input type="text" ng-model="user.name" required="">
   </label>
   <label class="item item-input">
     <span class="input-label">密码:</span>
-    <input type="password" ng-modal="user.password">
+    <input type="password" ng-model="user.password" required="">
   </label>
+  <form>
 </div>
 <div class="row">
   <div class="col col-50">
@@ -14,7 +16,7 @@
   </div>
 </div>
 <div class="p-lr-10">
-  <button class="button button-outline button-positive w-100" ng-click="confirm()">
+  <button class="button button-outline button-positive w-100" ng-click="confirm(loginForm)">
     登陆
   </button>
 </div>

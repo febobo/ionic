@@ -11,5 +11,6 @@ angular.module('starter.services')
   loading.hide = function() {
     $ionicLoading.hide();
   }
+  
   return loading;
 })

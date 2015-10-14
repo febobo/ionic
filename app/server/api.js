@@ -1,5 +1,7 @@
 var User = require('./controllers/user');
 
 module.exports = function(app){
-  app.post('/user/login' , User.signup);
+  // 用户接口
+  app.post('/user/signup' , User.signup);
+  app.post('/user/signin' , User.signin);
 }

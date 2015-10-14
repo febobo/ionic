@@ -5,12 +5,17 @@
 .m-t-50{
   margin-top:50px;
 }
-.p-t-50{
+.p-tb-50{
   padding-top:50px;
+  padding-bottom: 50px;
 }
 .p-lr-10{
   padding : 0 10px;
 }
 .w-100{
   width : 100%;
+}
+
+.footerBar > * {
+  line-height: 6px;
 }

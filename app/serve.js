@@ -6,7 +6,7 @@ mongoose.connect('mongodb://localhost/ionic');
 app.use(express.static('www'));
 
 var bodyParser = require('body-parser');
-//app.use(bodyParser.urlencoded({extenden : true}));
+app.use(bodyParser.urlencoded({extenden : true}));
 app.use(bodyParser.json());
 // CORS (Cross-Origin Resource Sharing) headers to support Cross-site HTTP requests
 

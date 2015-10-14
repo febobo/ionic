@@ -76,6 +76,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       templateUrl: baseUrl + '/user/login.html',
       controller: 'loginController'
     })
+    .state('page.detail',{
+      data: {
+        title: '详情',
+      },
+      url: 'detail/{id}',
+      templateUrl: baseUrl + '/detail/detail.html',
+      controller: 'detailController'
+    })
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
