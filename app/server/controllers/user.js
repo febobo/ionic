@@ -62,3 +62,43 @@ exports.signin = function(req, res) {
     })
   })
 }
+
+// 用户列表o
+exports.user_list = function(req , res){
+  console.log(req)
+  var page = parseInt(req.body.currentPage) || 0;
+  var count = parseInt(req.body.page) || 10 ;
+  var inx = page * count ;
+  User.fetch(function(err , users){
+    if(err){
+      console.log(err);
+    }
+    var users = users.slice(inx , inx + count);
+    res.send({
+      status : 0,
+      lists : users
+    })
+  })
+}
+
+// 删除用户
+exports.delete_user = function(req , res){
+  User.findOne({_id : name} , function(err , user){
+    if(err){
+      console.log(err);
+    }
+    if(!user.name){
+      return res.send({
+        status : 0,
+        msg : '用户不存在'
+      })
+    }
+    User.remove({name : name} , function(err , docs){
+      res.send({
+        status : 0,
+        msg : '删除成功'
+      })
+    })
+
+  })
+}
